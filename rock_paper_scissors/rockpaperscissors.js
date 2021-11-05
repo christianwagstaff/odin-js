@@ -1,4 +1,8 @@
 const rpsChoices = ['Rock', 'Paper', 'Scissors'];
+const button = document.querySelector('#playGame');
+
+button.addEventListener('click', game);
+button.addEventListener('click', showOptionList);
 
 function addSpaceArray(array) {
     return array.join(', ');
@@ -11,15 +15,12 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        window.alert(`Tie! You both picked ${computerSelection}`)
         return `tie`;
     } else if (playerSelection == 'Rock' && computerSelection == 'Scissors' 
     || playerSelection == 'Paper' && computerSelection == 'Rock' 
     || playerSelection == 'Scissors' && computerSelection == 'Paper') {
-        window.alert(`You Win! ${playerSelection} beats ${computerSelection}`)
         return 'playerWin';
     } else {
-        window.alert(`You Lose! ${computerSelection} beats ${playerSelection}`)
         return 'computerWin';
     }
 }
@@ -30,15 +31,10 @@ function playerChoice() {
     return playerChoice;
 }
 
-function displayCurrentScore(playerScore, computerScore) {
-    return (window.alert(`
-    Player Score: ${playerScore} 
-    Computer Score: ${computerScore}`));
-}
-
 function game() {
     let playerScore = 0;
     let computerScore = 0;
+    //run the game until either the player or computer have 5 points
     while (playerScore < 5 && computerScore < 5) {
         let winner = playRound(playerChoice(), computerPlay())
         if (winner === 'playerWin') {
@@ -46,7 +42,6 @@ function game() {
         } else if (winner === 'computerWin') {
             computerScore += 1;
         } 
-        displayCurrentScore(playerScore, computerScore);
         updateCurrentScore(playerScore, computerScore);
     }
 }
@@ -54,4 +49,9 @@ function game() {
 function updateCurrentScore(playerScore, computerScore) {
     document.getElementById('playerScore').innerHTML = playerScore;
     document.getElementById('computerScore').innerHTML = computerScore;
+}
+
+function getCurrentScore(playerScore, computerScore) {
+    return (`Player Score: ${playerScore}
+    Computer Score: ${computerScore}`);
 }

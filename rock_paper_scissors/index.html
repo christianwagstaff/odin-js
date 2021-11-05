@@ -5,15 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <script src='rockpaperscissors.js'></script>
     <link rel='stylesheet' href='style.css'>
+    <script src="https://kit.fontawesome.com/affeb91e0c.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class='description'>
         <h1>Rock Paper Scissors</h1>
         <p>Let's play a game, first to 5 wins!</p>
+        <!--
         <p>Press the buttom below to start the game.</p>
-        <button onclick="game()">Start</button>
+        <button id='playGame'>Start</button>
+        -->
     </div>
     <div class='currentScore'>
         <h2>Current Score</h2>
@@ -28,5 +30,14 @@
             </div>
         </div>
     </div>
+    <div class='description' id='pickList'>
+        <h2>Pick Your Choice</h2>
+        <div>
+            <button value="Rock" id='rockBtn' class='option'><i class="far fa-hand-rock"></i></button>
+            <button value="Paper" id='paperBtn' class='option'><i class="far fa-sticky-note"></i></button>
+            <button value="Scissors" id='scissorsBtn' class='option'><i class="far fa-hand-scissors"></i>            </button>
+        </div>
+    </div>
+    <script src='rps_v2.js'></script>
 </body>
 </html>
