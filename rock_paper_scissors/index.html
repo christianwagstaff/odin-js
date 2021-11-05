@@ -9,34 +9,48 @@
     <script src="https://kit.fontawesome.com/affeb91e0c.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class='description'>
-        <h1>Rock Paper Scissors</h1>
-        <p>Let's play a game, first to 5 wins!</p>
-        <!--
-        <p>Press the buttom below to start the game.</p>
-        <button id='playGame'>Start</button>
-        -->
-    </div>
-    <div class='currentScore'>
-        <h2>Current Score</h2>
-        <div class='scoreCard'>
-            <div class='card'>
-                <h3>Player</h3>
-                <p id='playerScore'>0</p>
+    <div class='main'>
+        <div class='description'>
+            <h1>Rock Paper Scissors</h1>
+            <p>Let's play a game, first to 5 wins!</p>
+            <!--
+            <p>Press the buttom below to start the game.</p>
+            <button id='playGame'>Start</button>
+            -->
+        </div>
+        <div class='currentScore'>
+            <h2>Current Score</h2>
+            <div class='scoreCard'>
+                <div class='card rounded-corners'>
+                    <h3>Player</h3>
+                    <p id='playerScore'>0</p>
+                </div>
+                <div class='card rounded-corners'>
+                    <h3>Computer</h3>
+                    <p id='computerScore'>0</p>
+                </div>
             </div>
-            <div class='card'>
-                <h3>Computer</h3>
-                <p id='computerScore'>0</p>
+        </div>
+        <div class='description' id='pickList'>
+            <h2>Pick Your Choice</h2>
+            <div>
+                <button value="Rock" id='rockBtn' class='option'><i class="far fa-hand-rock"></i></button>
+                <button value="Paper" id='paperBtn' class='option'><i class="far fa-sticky-note"></i></button>
+                <button value="Scissors" id='scissorsBtn' class='option'><i class="far fa-hand-scissors"></i>            </button>
             </div>
         </div>
     </div>
-    <div class='description' id='pickList'>
-        <h2>Pick Your Choice</h2>
-        <div>
-            <button value="Rock" id='rockBtn' class='option'><i class="far fa-hand-rock"></i></button>
-            <button value="Paper" id='paperBtn' class='option'><i class="far fa-sticky-note"></i></button>
-            <button value="Scissors" id='scissorsBtn' class='option'><i class="far fa-hand-scissors"></i>            </button>
+    <div class='highScore'>
+        <h2>Games Won</h2>
+        <div class='card'>
+            <h3>Player:</h3>
+            <p id='playerHighScore'>0</p>
         </div>
+        <div class='card'>
+            <h3>Computer:</h3>
+            <p id='computerHighScore'>0</p>
+        </div>
+        <button id='reset'>Reset</button>
     </div>
     <script src='rps_v2.js'></script>
 </body>

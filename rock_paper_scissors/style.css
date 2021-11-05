@@ -2,7 +2,7 @@ body {
     background-color: rgb(207, 207, 207);
     min-height: 90vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-evenly;
 }
 
@@ -27,17 +27,16 @@ body {
     gap: 15%;
 }
 
-.card {
+.main .card {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-width: 150px;
     background-color: grey;
-    border-radius: 15px;
 }
 
-.card p {
+.main .card p {
     margin-top: 0px;
 }
 
@@ -60,4 +59,37 @@ button i {
 
 .option {
     border-radius: 15px;
+}
+
+.rounded-corners {
+    border-radius: 15px;
+}
+
+.main {
+    align-self: center;
+    justify-self: center;
+    flex-grow: 1;
+}
+
+.highScore {
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: grey;
+    height: 50vh;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.highScore .card {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.highScore button {
+    align-self: flex-end;
 }
