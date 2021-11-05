@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function add7(val1, val2) {
+            return val1 + val2;
+        }
+        console.log(add7(1,2));
+        function multiply(val1, val2) {
+            return val1 * val2;
+        }
+        console.log(multiply(2,4));
+        function capitalize(word) {
+            lower = word.toLowerCase();
+            return lower[0].toUpperCase() + lower.substring(1);
+        }
+        console.log(capitalize('test'));
+        console.log(capitalize('TEST'));
+        console.log(capitalize('tEsTtEsT'));
+        function lastLetter(word) {
+            return word.substring(word.length -1);
+        }
+        console.log(lastLetter('hello'));
+        console.log(lastLetter('my'));
+        console.log(lastLetter('name is christian'));
+    </script>
+</body>
+</html>
