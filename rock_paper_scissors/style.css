@@ -19,13 +19,9 @@ body {
     align-self: center;
     border-bottom: 1px solid black;
     padding: 10px;
+    width: 500px;
     min-width: 50%;
     text-align: center;
-}
-
-.content {
-    display: flex;
-    flex-grow: 1;
 }
 
 .currentScore {
@@ -78,6 +74,7 @@ body {
     height: 70px;
     padding: 5px;
     font-size: 75px;
+    text-align: center;
 }
 
 .currentPick {
@@ -109,18 +106,6 @@ body {
     flex-grow: 1;
 }
 
-.highScore {
-    align-self: center;
-    justify-self: center;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    background-color: darkgray;
-    height: 50vh;
-    padding-left: 16px;
-    padding-right: 16px;
-}
-
 .highScore .card {
     display: flex;
     align-items: center;
@@ -144,4 +129,48 @@ footer {
 
 .hidden {
     display:none;
+}
+
+.highScore {
+    display: flex;
+    gap: 15px;
+    background-color: darkgray;
+}
+
+@media (min-width: 700px) {
+    .content {
+        display: flex;
+        flex-grow: 1;
+    }
+    .highScore {
+        position: absolute;
+        left: 75%;
+        align-self: center;
+        justify-self: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+        padding-left: 12px;
+        padding-right: 12px;
+        width: 150px;
+    }
+}
+
+@media (max-width: 700px) {
+    .content {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+    }
+    .highScore {
+        justify-content: center;
+        align-items: center;
+        padding: 6px;
+        margin: 12px;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
 }

@@ -44,22 +44,19 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game(playerChoice) {
-    if (playerScore === 5 || computerScore === 5) {
-        updateTotalGamesWon();
-        updateHighScoreDispalay();
-        resetCurrentScore();
-    }
     let computerChoice = computerPlay();
     let winner = playRound(playerChoice, computerChoice)
+    showCurrentPick();
     if (winner === 'playerWin') {
         playerScore += 1;
+        if (playerScore === 5) endGame();
     } else if (winner === 'computerWin') {
         computerScore += 1;
+        if (computerScore === 5) endGame();
     }
     updateCurrentPick(playerCurrentPick, playerChoice);
     updateCurrentPick(computerCurrentPick, computerChoice); 
     updateCurrentScoreDisplay();
-    showCurrentPick();
 }
 
 function updateCurrentScoreDisplay() {
@@ -116,4 +113,14 @@ function updateCurrentPick(player, choice) {
     } else {
         player.className = scissors;
     }
+}
+
+function endGame() {
+    if (playerScore === 5) {
+        alert('You Win!');
+    } else {alert('You Lose!')};
+    updateTotalGamesWon();
+    updateHighScoreDispalay();
+    resetCurrentScore();
+    hideCurrentPick();
 }
